@@ -1,27 +1,64 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <div class="login-page">
+    <div class="login-page__content">
+      <Form />
+      <a class="login-page__content__link" href="https://google.com">Forgot your password?</a>
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
-import HelloWorld from './components/HelloWorld.vue';
+import Form from './components/Form.vue';
 
 @Options({
   components: {
-    HelloWorld,
+    Form,
   },
 })
 export default class App extends Vue {}
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="scss">
+:root {
+  --white: #ffffff;
+  --whitesmoke: #f5f5f5;
+  --lightblue: #add8e6;
+  --red: #ff0000;
+}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+input,
+button {
+  font-size: inherit;
+  font-family: inherit;
+  padding: 5px 7px;
+  border-radius: 3px;
+}
+a {
+  color: inherit;
+}
+
+.login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  background-color: var(--whitesmoke);
+
+  &__content {
+    width: 100%;
+    max-width: 300px;
+    background-color: var(--white);
+    padding: 1rem;
+    border-radius: 3px;
+
+    &__link {
+      font-size: 0.8rem;
+    }
+  }
 }
 </style>
